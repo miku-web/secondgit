@@ -20,12 +20,14 @@ typedef struct Employee {
 
 }EMPLOYEE; //职工结构体类型
 
+
 typedef struct DuLNode
 {
 	EMPLOYEE data;//数据域
 	struct DuLNode *prior,*next;//结点的前指针   // 结点的尾指针 
 }DuLNode,*DuLinkList;
 int number=0;
+
 
 //初始链表 
 void CreateList(DuLinkList &L)
@@ -90,7 +92,7 @@ void write(DuLinkList &L)
 		ptemp = ptemp->next;
 	}
 	fclose(fp);
-	printf("\t\t\t保存成功!");
+	printf("\t\t\t保存成功!\n");
 }
 
 //8.个人所得sui
@@ -124,25 +126,25 @@ double grsds(double sum)		//个人所得税
 void modify_add_scanf(EMPLOYEE &ptemp)
 {
 	printf("\t\t\t工号\t姓名\t岗位工资\t薪级工资\t职务津贴\t绩效工资\n");
-scanf("%s\t%s\t%lf\t%lf\t%lf\t%lf", ptemp.id, ptemp.name, &ptemp.salary, &ptemp.wages,&ptemp.allowance, &ptemp.meritpay);
+    printf("\t\t\t");scanf("\t\t\t%s\t%s\t%lf\t%lf\t%lf\t%lf", ptemp.id, ptemp.name, &ptemp.salary, &ptemp.wages,&ptemp.allowance, &ptemp.meritpay);
 	while (strlen(ptemp.id)>10)
 	{
 		//printf("\t工号\t姓名\t岗位工资\t薪级工资\t职务津贴\t绩效工资\n");
 		printf("\t\t\t工号\t姓名\t岗位工资\t薪级工资\t职务津贴\t绩效工资\n");
-		scanf("%s\t%s\t%lf\t%lf\t%lf\t%lf", ptemp.id, ptemp.name, &ptemp.salary, &ptemp.wages,&ptemp.allowance, &ptemp.meritpay);
+		printf("\t\t\t");scanf("\t\t\t%s\t%s\t%lf\t%lf\t%lf\t%lf", ptemp.id, ptemp.name, &ptemp.salary, &ptemp.wages,&ptemp.allowance, &ptemp.meritpay);
 	}//工号大于要求 
 
 	while (strlen(ptemp.name)>10)
 	{
 		//printf("\t工号\t姓名\t岗位工资\t薪级工资\t职务津贴\t绩效工资\n");
 		printf("\t\t\t工号\t姓名\t岗位工资\t薪级工资\t职务津贴\t绩效工资\n");
-		scanf("%s\t%s\t%lf\t%lf\t%lf\t%lf", ptemp.id, ptemp.name, &ptemp.salary, &ptemp.wages,&ptemp.allowance, &ptemp.meritpay);
+		printf("\t\t\t");scanf("\t\t\t%s\t%s\t%lf\t%lf\t%lf\t%lf", ptemp.id, ptemp.name, &ptemp.salary, &ptemp.wages,&ptemp.allowance, &ptemp.meritpay);
 	}//姓名不符合
 	ptemp.shouldpay = ptemp.salary + ptemp.wages + ptemp.allowance + ptemp.meritpay;
 	ptemp.tax = grsds(ptemp.shouldpay);
 	ptemp.realpay = ptemp.shouldpay - ptemp.tax;
-	printf("添加成功\n");
-	printf("\n");
+	printf("\t\t\t添加成功\n");
+
 
 }
 
@@ -155,15 +157,15 @@ void find(DuLinkList &L)
     ptemp = L;
 
 
-	printf("\t\t\t请输入职工的工号：\n");
-	scanf("%s", gonghao);
+	printf("\t\t\t请输入职工的工号：");
+	scanf("\t\t\t%s", gonghao);
 
 	while (strlen(gonghao) > 10)
 	{
 		printf("\t\t\t输入的工号有误，请重新输入\n");
 		scanf("%s", gonghao);
 	}
-
+    if (ptemp == NULL)printf("该职工信息不存在\n");
 	while (ptemp)
 	{
 		if (strcmp(ptemp->data.id, gonghao) == 0)
@@ -173,8 +175,9 @@ void find(DuLinkList &L)
 		        //   工号    姓名    岗位      职务      绩效      实发      应发     所得     实发  break;
 		}
 		ptemp = ptemp->next;
+		
 	}
-	if (ptemp == NULL)printf("该职工信息不存在\n");
+	//if (ptemp == NULL)printf("该职工信息不存在\n");
 	//free(ptemp);
 
 }
@@ -187,7 +190,7 @@ void modify(DuLinkList &L)
 	ptemp = L;
 	bool flag =0;
 
-	printf("\t\t\t请输入你需要修改的职工号：\n");
+	printf("\t\t\t请输入你需要修改的职工号：");
 	scanf("%s", gonghao);
 
 	while (strlen(gonghao) > 10)
@@ -208,7 +211,7 @@ void modify(DuLinkList &L)
 		ptemp = ptemp->next;
 	}
 	if(flag==0)
-			printf("\t\t\t你输入的工号没有对应的职工数据，请检查是否有错误！\n");
+			printf("\t\t\t你输入的工号没有对应的职工数据，请检查是否有错误!\n");
 } 
 
 //7.添加
@@ -216,16 +219,17 @@ void modify(DuLinkList &L)
 void add(DuLinkList &L)
 {
 	DuLinkList ptemp;
-	ptemp = (DuLNode*)malloc(sizeof(DuLNode));
+	
 	int count;//添加的总个数 
 	
 
-    printf("\t\t\t请输入你想添加的职工数：\n");
+    printf("\t\t\t请输入你想添加的职工数：");
     scanf("%d",&count);
     while(count!=0)
     {
     	if (L->next == NULL)
 	  {
+	  	ptemp = (DuLNode*)malloc(sizeof(DuLNode));
 		ptemp->next = L->next;
 		L->next = ptemp;
 		ptemp->prior=L;
@@ -234,6 +238,7 @@ void add(DuLinkList &L)
 	  }
  	   else
 	  {
+	  	ptemp = (DuLNode*)malloc(sizeof(DuLNode));
 		ptemp->prior = L;
 		ptemp->next = L->next;	
 		L->next->prior = ptemp;
@@ -256,17 +261,17 @@ void del(DuLinkList &L)
 	int i;
 	char ch;
 
-	printf("\t\t\t请输入你想删除的工号：\n");
+	printf("\t\t\t请输入你想删除的工号：");
 		scanf("%s", gonghao);
 	for (i = 0; ptemp; i++)
 	{
 		if (strcmp(gonghao, ptemp->data.id) == 0)
 		{
 			printf("\t\t\t是否确认删除该员工的所有信息（y/n)\n");
-			scanf(" %c", &ch);
+			printf("\t\t\t");scanf(" %c", &ch);
 			if (ch == 'y' || ch == 'Y')
 			{
-				printf("已删除：%s %s的全部信息\n",ptemp->data.id,ptemp->data.name);
+				printf("\t\t\t已删除：职工%s的全部信息\n",ptemp->data.id);
 				break;
 			}
 		}
@@ -275,7 +280,7 @@ void del(DuLinkList &L)
 	//没找到
 	if (ptemp == NULL || i == number)
 	{
-		printf("未找到该职工信息！\n");
+		printf("\t\t\t未找到该职工信息！\n");
 			
 	}
 	//在末尾找到
@@ -298,8 +303,8 @@ void list(DuLinkList &L)
 	ptemp = L->next;
 
 	
-	if(ptemp==NULL)printf("没有数据可浏览\n");
-	while (ptemp)
+	if(ptemp==NULL)printf("\t\t\t没有数据可浏览\n");
+	while(ptemp!=NULL)
 	{
 		printf("\t\t工号 姓名 岗位工资 薪级工资 职务津贴 绩效工资 应发工资 个人所得税 实发工资\n");
 		printf("\t\t%s    %s\t   %.2lf\t   %.2lf\t    %.2lf     %.2lf\t %.2lf\t %.2lf \t   %.2lf\n", ptemp->data.id, ptemp->data.name, ptemp->data.salary, ptemp->data.wages,ptemp->data.allowance, ptemp->data.meritpay, ptemp->data.shouldpay, ptemp->data.tax, ptemp->data.realpay);
@@ -352,11 +357,11 @@ void menu()
 	read(L);
     /*PrintfAll(L);*/ 
 	
-	scanf("%d", &sele);
+	scanf("\t\t\t%d", &sele);
 	while (sele<1 || sele>7)
 	{
 		printf("\t\t\t你输入的选项必须在1-7之间，请检查之后重新输入\n");
-		scanf("%d", &sele);
+		scanf("\t\t\t%d", &sele);
 	}
 	while(sele!=7)
 	{
@@ -371,7 +376,7 @@ void menu()
 	                             case 7 : exit(0); break;	
 	    }
 	    printf("\t\t\t请输入你想要进行的操作：");
-	    scanf("%d",&sele);
+	    scanf("\t\t\t%d",&sele);
 	}
 	
 }
