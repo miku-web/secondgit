@@ -176,9 +176,8 @@ void find(DuLinkList &L)
 		        //   工号    姓名    岗位      职务      绩效      实发      应发     所得     实发  break;
 		}
 		ptemp = ptemp->next;
-		
+	
 	}
-	if (i==number)printf("该职工信息不存在\n");
 	//free(ptemp);
 
 }
