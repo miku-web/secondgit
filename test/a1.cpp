@@ -155,6 +155,7 @@ void find(DuLinkList &L)
 	char gonghao[20]; 
 	char ch;//标记是否重新输入 
     ptemp = L;
+    int i;
 
 
 	printf("\t\t\t请输入职工的工号：");
@@ -165,8 +166,8 @@ void find(DuLinkList &L)
 		printf("\t\t\t输入的工号有误，请重新输入\n");
 		scanf("%s", gonghao);
 	}
-    if (ptemp == NULL)printf("该职工信息不存在\n");
-	while (ptemp)
+    //if (ptemp =)printf("该职工信息不存在\n");
+	for( i=0;i<number;i++)
 	{
 		if (strcmp(ptemp->data.id, gonghao) == 0)
 		{
@@ -177,7 +178,7 @@ void find(DuLinkList &L)
 		ptemp = ptemp->next;
 		
 	}
-	//if (ptemp == NULL)printf("该职工信息不存在\n");
+	if (i==number)printf("该职工信息不存在\n");
 	//free(ptemp);
 
 }
