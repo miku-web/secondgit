@@ -299,10 +299,11 @@ void list(DuLinkList &L)
 	ptemp = L->next;
 
 	
+	if(ptemp==NULL)printf("没有数据");
 	while (ptemp)
 	{
 		printf("\t姓名\t岗位工资\t薪级工资\t职务津贴\t绩效工资\t实发工资\t个人所得税\t实发工资\n");
-		printf("\t%s\t%s\t%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\n", ptemp->data.id, ptemp->data.name, &ptemp->data.salary, &ptemp->data.allowance, &ptemp->data.meritpay, &ptemp->data.shouldpay, &ptemp->data.tax, &ptemp->data.realpay);
+		printf("\t%s     %s\t%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\t%.2lf\n", ptemp->data.id, ptemp->data.name, ptemp->data.salary, ptemp->data.wages,ptemp->data.allowance, ptemp->data.meritpay, ptemp->data.shouldpay, ptemp->data.tax, ptemp->data.realpay);
 		ptemp = ptemp->next;
 	}
 
