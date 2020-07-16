@@ -44,7 +44,6 @@ int read(DuLinkList &L)
 	char tag;
 
 	p = L;
-	ptemp = (DuLNode*)malloc(sizeof(DuLNode));
 	fp = fopen("zgzggz.dat", "rb");
 	tag = fgetc(fp);
 	rewind(fp);
@@ -53,9 +52,9 @@ int read(DuLinkList &L)
 		
 			for (i = 0; !feof(fp); i++)
 			{
-				
-				fread(&ptemp->data, sizeof(EMPLOYEE), 1, fp);
 				ptemp = (DuLNode*)malloc(sizeof(DuLNode));
+				fread(&ptemp->data, sizeof(EMPLOYEE), 1, fp);
+				
 				ptemp->next = p->next;
 				p->next = ptemp;
 				ptemp->prior = p;
@@ -299,7 +298,7 @@ void list(DuLinkList &L)
 	ptemp = L->next;
 
 	
-	if(ptemp==NULL)printf("没有数据");
+	if(ptemp==NULL)printf("没有数据\n");
 	while (ptemp)
 	{
 		printf("\t姓名\t岗位工资\t薪级工资\t职务津贴\t绩效工资\t实发工资\t个人所得税\t实发工资\n");
