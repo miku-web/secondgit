@@ -7,9 +7,9 @@ using namespace std;
 
 typedef int Status;
 typedef struct Warehourse{
-	char number[Max_Size];//»õÎï±àºÅ
-	char name[Max_Size];//»õÎïÃû³Æ
-	char counter[Max_Size];//»õÎïÊıÁ¿
+	char number[Max_Size];//è´§ç‰©ç¼–å·
+	char name[Max_Size];//è´§ç‰©åç§°
+	char counter[Max_Size];//è´§ç‰©æ•°é‡
 }WAREHOUSE;
 
 typedef struct DuLNode
@@ -19,14 +19,14 @@ typedef struct DuLNode
 }DuLNode,*DuLinkList;
 int number = 0;
 
-//³õÊ¼»¯Á´±í
+//åˆå§‹åŒ–é“¾è¡¨
 void InitLinkList(DuLinkList &L)
 {
 	L = new DuLNode;
 	L->next = NULL;
 	L->prior = L->next;
 }
-//¶ÁÈ¡²Ö¿âÎÄ¼ş
+//è¯»å–ä»“åº“æ–‡ä»¶
 int read(DuLinkList &L)
 {
 	FILE *fp;
@@ -35,7 +35,7 @@ int read(DuLinkList &L)
 	char tag;
 
 	p = L;
-	fp = fopen("warehouse.dat", "rb");//´ò¿ªÎÄ¼ş
+	fp = fopen("warehouse.dat", "rb");//æ‰“å¼€æ–‡ä»¶
 	tag = fgetc(fp);
 	rewind(fp);
 	if (tag != EOF)
@@ -57,18 +57,18 @@ int read(DuLinkList &L)
 	return ok;
 }
 
-//±£´æĞÂµÄ²Ö¿âÎÄ¼ş
+//ä¿å­˜æ–°çš„ä»“åº“æ–‡ä»¶
 void save(DuLinkList &L)
 {
 	DuLinkList ptemp;
 	FILE *fp;
 
 	ptemp = L->next;
-	if (number == 0)cout << "Ä¿Ç°²Ö¿âÎŞÊı¾İ£¬ÇëÖØĞÂÌí¼ÓÊı¾İ£¡";
+	if (number == 0)cout << "ç›®å‰ä»“åº“æ— æ•°æ®ï¼Œè¯·é‡æ–°æ·»åŠ æ•°æ®ï¼";
 
 	if ((fp = fopen("warehouse.dat", "wb+")) == NULL)
 	{
-		cout << "ÎŞ·¨´ò¿ª´ËÎÄ¼ş";
+		cout << "æ— æ³•æ‰“å¼€æ­¤æ–‡ä»¶";
 		exit(0);
 	}
 
@@ -78,30 +78,30 @@ void save(DuLinkList &L)
 		ptemp = ptemp->next;
 	}
 	fclose(fp);
-	cout << "±¾µØ±£´æ³É¹¦" << endl;
+	cout << "æœ¬åœ°ä¿å­˜æˆåŠŸ" << endl;
 }
 
-//²éÑ¯²Ö¿â´¢´æÇé¿ö
+//æŸ¥è¯¢ä»“åº“å‚¨å­˜æƒ…å†µ
 void find(DuLinkList &L)
 {
 	DuLinkList ptemp;
 	char Gnumber[20];
 	char Gname[20];
-	char tag;//±ê¼ÇÊÇ·ñÒªÊäÈë
+	char tag;//æ ‡è®°æ˜¯å¦è¦è¾“å…¥
 	int flag;
 	int i;
 	int record;
 
 	ptemp = L->next;
-	cout << "ÇëÎÊÄãÏëÒÔÊ²Ã´ĞÎÊ½²éÕÒ£¿£¨1ÊÇ°´ÕÕ»õÎï±àºÅ²éÕÒ£¬2ÊÇ°´ÕÕÃû³Æ²éÕÒ£©";
+	cout << "è¯·é—®ä½ æƒ³ä»¥ä»€ä¹ˆå½¢å¼æŸ¥æ‰¾ï¼Ÿï¼ˆ1æ˜¯æŒ‰ç…§è´§ç‰©ç¼–å·æŸ¥æ‰¾ï¼Œ2æ˜¯æŒ‰ç…§åç§°æŸ¥æ‰¾ï¼‰";
 	cin >> flag;
 	if (flag == 1)
 	{
-		cout << "ÇëÊäÈëÄãËùĞèÒªÕÒµÄ»õÎï±àºÅ(ÔÚ10Î»Êı×ÖÒÔÏÂ)£º";
+		cout << "è¯·è¾“å…¥ä½ æ‰€éœ€è¦æ‰¾çš„è´§ç‰©ç¼–å·(åœ¨10ä½æ•°å­—ä»¥ä¸‹)ï¼š";
 		cin >> Gnumber;
 		while (strlen(Gnumber) > 10)
 		{
-			cout << "ÄãÊäÈëµÄ»õÎï±àºÅÓĞÎó£¬ÇëÖØĞÂÊäÈë";
+			cout << "ä½ è¾“å…¥çš„è´§ç‰©ç¼–å·æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥";
 			cin >> Gnumber;
 		}
 		while (ptemp != NULL)
@@ -109,7 +109,7 @@ void find(DuLinkList &L)
 			record = 1;
 			if (strcmp(ptemp->data.number, Gnumber) == 0)
 			{
-				cout << "Î»Ğò£º" << record << "  " << "»õÎï±àºÅ£º" << ptemp->data.number << "  " << "»õÎïÃû³Æ£º" << ptemp->data.name << "»õÎïÊıÁ¿£º" << ptemp->data.counter << endl;
+				cout << "ä½åºï¼š" << record << "  " << "è´§ç‰©ç¼–å·ï¼š" << ptemp->data.number << "  " << "è´§ç‰©åç§°ï¼š" << ptemp->data.name << "è´§ç‰©æ•°é‡ï¼š" << ptemp->data.counter << endl;
 				break;
 			}
 			ptemp = ptemp->next;
@@ -119,11 +119,11 @@ void find(DuLinkList &L)
 
 	else if (flag == 2)
 	{
-		cout << "ÇëÊäÈëÄãËùĞèÒªÕÒµÄ»õÎïÃû³Æ(ÔÚ10Î»×ÖÄ¸ÒÔÏÂ)£º";
+		cout << "è¯·è¾“å…¥ä½ æ‰€éœ€è¦æ‰¾çš„è´§ç‰©åç§°(åœ¨10ä½å­—æ¯ä»¥ä¸‹)ï¼š";
 		cin >> Gname;
 		while (strlen(Gname) > 10)
 		{
-			cout << "ÄãÊäÈëµÄ»õÎïÃû³ÆÓĞÎó£¬ÇëÖØĞÂÊäÈë";
+			cout << "ä½ è¾“å…¥çš„è´§ç‰©åç§°æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥";
 			cin >> Gname;
 		}
 		while (ptemp != NULL)
@@ -131,75 +131,75 @@ void find(DuLinkList &L)
 			record = 1;
 			if (strcmp(ptemp->data.name, Gname) == 0)
 			{
-				cout << "Î»Ğò£º" << record << "  " << "»õÎï±àºÅ£º" << ptemp->data.number << "  " << "»õÎïÃû³Æ£º" << ptemp->data.name << "»õÎïÊıÁ¿£º" << ptemp->data.counter << endl;
+				cout << "ä½åºï¼š" << record << "  " << "è´§ç‰©ç¼–å·ï¼š" << ptemp->data.number << "  " << "è´§ç‰©åç§°ï¼š" << ptemp->data.name << "è´§ç‰©æ•°é‡ï¼š" << ptemp->data.counter << endl;
 				break;
 			}
 			ptemp = ptemp->next;
 			record++;
 		}
-		if (ptemp == NULL)cout << "¸Ã²Ö¿âÃ»ÓĞ¸ÃÊı¾İ" << endl;
+		if (ptemp == NULL)cout << "è¯¥ä»“åº“æ²¡æœ‰è¯¥æ•°æ®" << endl;
 	}
 }
 
-//ĞŞ¸Ä±àºÅ
+//ä¿®æ”¹ç¼–å·
 void modify_number(WAREHOUSE &ptemp)
 {
-	cout << "ÇëÊäÈëĞÂµÄ»õÎï±àºÅ£º";
+	cout << "è¯·è¾“å…¥æ–°çš„è´§ç‰©ç¼–å·ï¼š";
 	cin >> ptemp.number;
 	while (strlen(ptemp.number) > 10)
 	{
-		cout << "ÇëÊäÈëĞÂµÄ»õÎï±àºÅ£º";
+		cout << "è¯·è¾“å…¥æ–°çš„è´§ç‰©ç¼–å·ï¼š";
 		cin >> ptemp.number;
 	}
-	cout << "ĞŞ¸Ä³É¹¦" << endl;
+	cout << "ä¿®æ”¹æˆåŠŸ" << endl;
 }
 
-//ĞŞ¸Ä»õÎïÃû³Æ
+//ä¿®æ”¹è´§ç‰©åç§°
 void modify_name(WAREHOUSE &ptemp)
 {
-	cout << "ÇëÊäÈëĞÂµÄ»õÎïÃû³Æ£º";
+	cout << "è¯·è¾“å…¥æ–°çš„è´§ç‰©åç§°ï¼š";
 	cin >> ptemp.name;
 	while (strlen(ptemp.name)>10)
 	{
-		cout << "ÇëÊäÈëĞÂµÄ»õÎïÃû³Æ£º";
+		cout << "è¯·è¾“å…¥æ–°çš„è´§ç‰©åç§°ï¼š";
 		cin >> ptemp.name;
 	}
-	cout << "ĞŞ¸Ä³É¹¦" << endl;
+	cout << "ä¿®æ”¹æˆåŠŸ" << endl;
 }
 
-//ĞŞ¸Ä»õÎïÊıÁ¿
+//ä¿®æ”¹è´§ç‰©æ•°é‡
 void modify_counter(WAREHOUSE &ptemp)
 {
-	cout << "ÇëÊäÈëĞÂµÄ»õÎïÃû³Æ£º";
+	cout << "è¯·è¾“å…¥æ–°çš„è´§ç‰©åç§°ï¼š";
 	cin >> ptemp.counter;
-	cout << "ĞŞ¸Ä³É¹¦" << endl;
+	cout << "ä¿®æ”¹æˆåŠŸ" << endl;
 }
 
-//È«²¿ĞŞ¸Ä
+//å…¨éƒ¨ä¿®æ”¹
 void modify_all(WAREHOUSE &ptemp)
 {
-	cout << "ÇëÊäÈëĞÂµÄ»õÎï±àºÅ£¬Ãû³Æ£¬ÊıÁ¿£º";
+	cout << "è¯·è¾“å…¥æ–°çš„è´§ç‰©ç¼–å·ï¼Œåç§°ï¼Œæ•°é‡ï¼š";
 	cin >>ptemp.number>> ptemp.name>>ptemp.counter;
 	while (strlen(ptemp.number) > 10)
 	{
-		cout << "ÇëÊäÈëĞÂµÄ»õÎï±àºÅ£º";
+		cout << "è¯·è¾“å…¥æ–°çš„è´§ç‰©ç¼–å·ï¼š";
 		cin >> ptemp.number;
 	}
 
 	while (strlen(ptemp.name)>10)
 	{
-		cout << "ÇëÊäÈëĞÂµÄ»õÎïÃû³Æ£º";
+		cout << "è¯·è¾“å…¥æ–°çš„è´§ç‰©åç§°ï¼š";
 		cin >> ptemp.name;
 	}
-	cout << "ĞŞ¸Ä³É¹¦" << endl;
+	cout << "ä¿®æ”¹æˆåŠŸ" << endl;
 }
 
-//ĞŞ¸ÄÊı¾İ2
+//ä¿®æ”¹æ•°æ®2
 void modify_add_cin(WAREHOUSE &ptemp)
 {
 	int tag;
 
-	cout << "ÇëÎÊÊÇÏëĞŞ¸ÄÄÄ¸öÊı¾İ£¬»¹ÊÇÈ«²¿ĞŞ¸Ä£¿£¨ĞŞ¸Ä»õÎï±àºÅÊäÈë0£¬ĞŞ¸Ä»õÎïÃû³ÆÊäÈë1£¬ĞŞ¸Ä»õÎïÊıÁ¿ÊäÈë2£¬È«²¿ĞŞ¸ÄÊäÈë4£©";
+	cout << "è¯·é—®æ˜¯æƒ³ä¿®æ”¹å“ªä¸ªæ•°æ®ï¼Œè¿˜æ˜¯å…¨éƒ¨ä¿®æ”¹ï¼Ÿï¼ˆä¿®æ”¹è´§ç‰©ç¼–å·è¾“å…¥0ï¼Œä¿®æ”¹è´§ç‰©åç§°è¾“å…¥1ï¼Œä¿®æ”¹è´§ç‰©æ•°é‡è¾“å…¥2ï¼Œå…¨éƒ¨ä¿®æ”¹è¾“å…¥4ï¼‰";
 	cin >> tag;
 	switch (tag)
 	{
@@ -209,7 +209,7 @@ void modify_add_cin(WAREHOUSE &ptemp)
 	case 3:modify_all(ptemp); break;
 	}
 }
-//ĞŞ¸ÄÊı¾İ
+//ä¿®æ”¹æ•°æ®
 void modify(DuLinkList &L)
 {
 	char Gnumber[20];
@@ -219,12 +219,12 @@ void modify(DuLinkList &L)
 	bool flag = 0;
 
 	ptemp = L;
-	cout << "ÇëÊäÈëÄãÏëĞŞ¸ÄµÄ»õÎï±àºÅ£º";
+	cout << "è¯·è¾“å…¥ä½ æƒ³ä¿®æ”¹çš„è´§ç‰©ç¼–å·ï¼š";
 	cin >> Gnumber;
 	while (strlen(Gnumber) > 10)
 	{
-		cout << "ÄãÊäÈëµÄ±àºÅÓĞÎó£¬ÇëÖØĞÂÊäÈë£¡" << endl;
-		cout << "ÇëÊäÈëÄãÏëĞŞ¸ÄµÄ»õÎï±àºÅ: ";
+		cout << "ä½ è¾“å…¥çš„ç¼–å·æœ‰è¯¯ï¼Œè¯·é‡æ–°è¾“å…¥ï¼" << endl;
+		cout << "è¯·è¾“å…¥ä½ æƒ³ä¿®æ”¹çš„è´§ç‰©ç¼–å·: ";
 		cin >> Gnumber;
 	}
 	while (ptemp)
@@ -235,23 +235,23 @@ void modify(DuLinkList &L)
 			modify_add_cin(ptemp->data);
 		}
 		ptemp = ptemp->next;
-		if (flag == 0)cout << "ÄãÊäÈëµÄ±àºÅÃ»ÓĞ¸ÃÊı¾İ£¡";
+		if (flag == 0)cout << "ä½ è¾“å…¥çš„ç¼–å·æ²¡æœ‰è¯¥æ•°æ®ï¼";
 	}
 }
 
-//Ìí¼ÓÊı¾İ
+//æ·»åŠ æ•°æ®
 void add_cin(WAREHOUSE &ptemp)
 {
-	cout << "ÇëÊäÈë»õÎï±àºÅ£¬»õÎïÃû³Æ£¬»õÎïÊıÁ¿" << endl;
+	cout << "è¯·è¾“å…¥è´§ç‰©ç¼–å·ï¼Œè´§ç‰©åç§°ï¼Œè´§ç‰©æ•°é‡" << endl;
 	cin >> ptemp.number >> ptemp.name >> ptemp.counter;
 	while (strlen(ptemp.number) > 10)
 	{
-		cout << "ÇëÊäÈë»õÎï±àºÅ£¬»õÎïÃû³Æ£¬»õÎïÊıÁ¿" << endl;
+		cout << "è¯·è¾“å…¥è´§ç‰©ç¼–å·ï¼Œè´§ç‰©åç§°ï¼Œè´§ç‰©æ•°é‡" << endl;
 		cin >> ptemp.number >> ptemp.name >> ptemp.counter;
 	}
 	while (strlen(ptemp.name) > 10)
 	{
-		cout << "ÇëÊäÈë»õÎï±àºÅ£¬»õÎïÃû³Æ£¬»õÎïÊıÁ¿" << endl;
+		cout << "è¯·è¾“å…¥è´§ç‰©ç¼–å·ï¼Œè´§ç‰©åç§°ï¼Œè´§ç‰©æ•°é‡" << endl;
 		cin >> ptemp.number >> ptemp.name >> ptemp.counter;
 	}
 }
@@ -260,7 +260,7 @@ void add(DuLinkList &L)
 	DuLinkList ptemp;
 	int count;
 
-	cout << "ÇëÊäÈëÄãÏëÌí¼ÓµÄ»õÎïÌõÊı£º";
+	cout << "è¯·è¾“å…¥ä½ æƒ³æ·»åŠ çš„è´§ç‰©æ¡æ•°ï¼š";
 	cin >> count;
 	while (count != 0)
 	{
@@ -270,7 +270,7 @@ void add(DuLinkList &L)
 			ptemp->next = L->next;
 			L->next = ptemp;
 			ptemp->prior = L;
-			cout << "ÇëÌí¼Ó»õÎïĞÅÏ¢£º" << endl;
+			cout << "è¯·æ·»åŠ è´§ç‰©ä¿¡æ¯ï¼š" << endl;
 			add_cin(ptemp->data);
 		}
 		else
@@ -280,59 +280,59 @@ void add(DuLinkList &L)
 			ptemp->next = L->next;
 			L->next->prior = ptemp;
 			L->next = ptemp;
-			cout << "ÇëÌí¼Ó»õÎïĞÅÏ¢£º" << endl;
+			cout << "è¯·æ·»åŠ è´§ç‰©ä¿¡æ¯ï¼š" << endl;
 			add_cin(ptemp->data);
 		}
 		count--;
 	}
 }
 
-//É¾³ı»õÎïĞÅÏ¢
+//åˆ é™¤è´§ç‰©ä¿¡æ¯
 void del(DuLinkList &L)
 {
 	char Gnumber[20];
 	char Gname[20];
 	char Gcounter[20];
 	DuLinkList ptemp;
-	int tag;//¸ù¾İÊ²Ã´À´É¾³ı
+	int tag;//æ ¹æ®ä»€ä¹ˆæ¥åˆ é™¤
 	int i;
-	char ch;//ÊÇ·ñÉ¾³ı
+	char ch;//æ˜¯å¦åˆ é™¤
 
 	ptemp = L;
-	cout << "ÇëÎÊÄãĞèÒª¸ù¾İÊ²Ã´À´É¾³ı£¿£¨ÊäÈë0ÊÇ¸ù¾İ±àºÅÉ¾³ı£¬ÊäÈë1ÊÇ¸ù¾İÃû³ÆÉ¾³ı£©" << endl;
-	cout << "ÎÂÜ°ÌáÊ¾£º»õÎï±àºÅÊÇÎ¨Ò»µÄ£¬»õÎïÃû³ÆÓĞ¿ÉÄÜÖØ¸´Å¶£¡" << endl;
+	cout << "è¯·é—®ä½ éœ€è¦æ ¹æ®ä»€ä¹ˆæ¥åˆ é™¤ï¼Ÿï¼ˆè¾“å…¥0æ˜¯æ ¹æ®ç¼–å·åˆ é™¤ï¼Œè¾“å…¥1æ˜¯æ ¹æ®åç§°åˆ é™¤ï¼‰" << endl;
+	cout << "æ¸©é¦¨æç¤ºï¼šè´§ç‰©ç¼–å·æ˜¯å”¯ä¸€çš„ï¼Œè´§ç‰©åç§°æœ‰å¯èƒ½é‡å¤å“¦ï¼" << endl;
 	cin >> tag;
 
 	if (tag == 0)
 	{
-		cout << "ÇëÊäÈëÄãÏëÉ¾³ıµÄ»õÎï±àºÅ£º";
+		cout << "è¯·è¾“å…¥ä½ æƒ³åˆ é™¤çš„è´§ç‰©ç¼–å·ï¼š";
 		cin >> Gnumber;
 		for (i = 0; ptemp; i++)
 		{
 			if (strcmp(Gnumber, ptemp->data.number) == 0)
 			{
-				cout << "ÊÇ·ñÈ·ÈÏÉ¾³ı¸Ã»õÎïĞÅÏ¢£¨y/n£©";
+				cout << "æ˜¯å¦ç¡®è®¤åˆ é™¤è¯¥è´§ç‰©ä¿¡æ¯ï¼ˆy/nï¼‰";
 				cin >> ch;
 				if (ch == 'y' || ch == 'Y')
 				{
-					cout << "ÒÑÉ¾³ı £º" << Gnumber << "µÄËùÓĞĞÅÏ¢!";
+					cout << "å·²åˆ é™¤ ï¼š" << Gnumber << "çš„æ‰€æœ‰ä¿¡æ¯!";
 					break;
 				}
 			}
 			ptemp = ptemp->next;
 		}
-		//ÕÒ²»µ½
+		//æ‰¾ä¸åˆ°
 		if (ptemp == NULL || i == number)
 		{
-			cout << "Î´²éÕÒµ½¸Ã»õÎïĞÅÏ¢£¡" << endl;
+			cout << "æœªæŸ¥æ‰¾åˆ°è¯¥è´§ç‰©ä¿¡æ¯ï¼" << endl;
 		}
 
-		//ÔÚÄ©Î²ÕÒµ½
+		//åœ¨æœ«å°¾æ‰¾åˆ°
 		if (ptemp->next == NULL)
 		{
 			ptemp->prior->next = ptemp->next;
 		}
-		//ÖĞ¼äÇøÓòÕÒµ½
+		//ä¸­é—´åŒºåŸŸæ‰¾åˆ°
 		if (ptemp->next != NULL)
 		{
 			ptemp->prior->next = ptemp->next;
@@ -344,4 +344,15 @@ void del(DuLinkList &L)
 
 }
 
-
+//é‡æ–°å»ºç«‹æ–‡ä»¶
+void empty(DuLinkList &L)
+{
+	FILE *fp;
+	if(fp=fopen("warehouse.dat","w+")==NULL)
+	{
+		cout<<"æ¸…ç©ºæ–‡ä»¶å¤±è´¥!";
+		getchar();
+		exit(0);
+		fclose(fp); 
+	}
+}
