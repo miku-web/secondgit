@@ -376,6 +376,7 @@ void list(DuLinkList &L)
 	free(ptemp);
 } 
 
+//菜单栏 
 void menu()
 {
 	//system("cls");
@@ -393,3 +394,37 @@ void menu()
 	printf("    \t \t\t\t  请输入你想要进行的操作所对应的选项：（1-7）:");
 
 }
+
+//main
+int main()
+{
+	int sele;
+	int key=0;
+	DuLinkList L;
+	
+	menu();
+	InitList(L);
+	read(L);
+	cin>>sele;
+	while(sele<1||sele>7)
+	{
+		cout<<"你输入的选项中必须在1-7之间，请检查过后重新输入!"<<endl;
+		cin>>sele;
+	}
+	while(sele!=7)
+	{
+		switch(sele)
+		{
+			case 1:
+				{
+					cout<<"--------------------------------正在查找--------------------------------------"<<endl;
+					do
+					{
+						key=0;
+						find(L);
+						cout
+					}
+				}
+		}
+	}
+} 
