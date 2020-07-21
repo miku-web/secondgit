@@ -355,4 +355,23 @@ void empty(DuLinkList &L)
 		exit(0);
 		fclose(fp); 
 	}
+	else
+	{
+		cout<<"已清空文件"<<endl;
+	}
 }
+
+//浏览全部仓库信息
+void list(DuLinkList &L)
+{
+	DuLinkList ptemp;
+	
+	ptemp = L;
+	if(ptemp==NULL)cout<<"该仓库没有数据可读"<<endl;
+	while(ptemp!=NULL)
+	{
+		cout<<"货物编号："<<ptemp->data.number<<"  "<<"货物编号："<<ptemp->data.name<<"  "<<"货物数量："<<ptemp->data.counter<<endl; 
+	    ptemp=ptemp->next; 
+	}
+	free(ptemp);
+} 
