@@ -1,4 +1,6 @@
 #include<iostream>
+#include<cstdlib>
+#include<stdio.h>
 #include<cstring>
 #define error 0
 #define ok 1
@@ -50,7 +52,7 @@ int read(DuLinkList &L)
 			p = ptemp;
 		}
 		p->prior->next = NULL;
-		free(ptemp);
+		delete(ptemp);
 	}
 	number = i;
 	fclose(fp);
@@ -98,11 +100,11 @@ void find(DuLinkList &L)
 	if (flag == 1)
 	{
 		cout << "请输入你所需要找的货物编号(在10位数字以下)：";
-		cin >> Gnumber;
+		cin.getline(Gnumber,20) ;
 		while (strlen(Gnumber) > 10)
 		{
 			cout << "你输入的货物编号有误，请重新输入";
-			cin >> Gnumber;
+			cin.getline(Gnumber,20) ;
 		}
 		while (ptemp != NULL)
 		{
@@ -120,11 +122,11 @@ void find(DuLinkList &L)
 	else if (flag == 2)
 	{
 		cout << "请输入你所需要找的货物名称(在10位字母以下)：";
-		cin >> Gname;
+		cin.getline(Gname,20);
 		while (strlen(Gname) > 10)
 		{
 			cout << "你输入的货物名称有误，请重新输入";
-			cin >> Gname;
+			cin.getline(Gname,20);
 		}
 		while (ptemp != NULL)
 		{
@@ -145,11 +147,11 @@ void find(DuLinkList &L)
 void modify_number(WAREHOUSE &ptemp)
 {
 	cout << "请输入新的货物编号：";
-	cin >> ptemp.number;
+	cin.getline(ptemp.number,20) ;
 	while (strlen(ptemp.number) > 10)
 	{
 		cout << "请输入新的货物编号：";
-		cin >> ptemp.number;
+		cin.getline(ptemp.number,20) ;
 	}
 	cout << "修改成功" << endl;
 }
@@ -158,11 +160,11 @@ void modify_number(WAREHOUSE &ptemp)
 void modify_name(WAREHOUSE &ptemp)
 {
 	cout << "请输入新的货物名称：";
-	cin >> ptemp.name;
+	cin.getline(ptemp.name,20) ;
 	while (strlen(ptemp.name)>10)
 	{
 		cout << "请输入新的货物名称：";
-		cin >> ptemp.name;
+		cin.getline(ptemp.number,20) ;
 	}
 	cout << "修改成功" << endl;
 }
@@ -171,20 +173,26 @@ void modify_name(WAREHOUSE &ptemp)
 void modify_counter(WAREHOUSE &ptemp)
 {
 	cout << "请输入新的货物名称：";
-	cin >> ptemp.counter;
+	cin.getline(ptemp.counter,20) ;
 	cout << "修改成功" << endl;
 }
 
 //全部修改
 void modify_all(WAREHOUSE &ptemp)
 {
-	cout << "请输入新的货物编号，名称，数量：";
-	cin >>ptemp.number>> ptemp.name>>ptemp.counter;
+	cout << "请输入新的货物编号:"<<endl;
+	cin.getline(ptemp.number,20);
+	cout << "请输入新的货物名称:"<<endl;
+	cin.getline(ptemp.name,20);
+	cout << "请输入新的货物数量:"<<endl;
+	cin.getline(ptemp.counter,20);
+	
 	while (strlen(ptemp.number) > 10)
 	{
 		cout << "请输入新的货物编号：";
 		cin >> ptemp.number;
 	}
+	//名称 
 
 	while (strlen(ptemp.name)>10)
 	{
@@ -220,12 +228,13 @@ void modify(DuLinkList &L)
 
 	ptemp = L;
 	cout << "请输入你想修改的货物编号：";
-	cin >> Gnumber;
+	//cin >> Gnumber;
+	cin.getline(Gnumber,20);
 	while (strlen(Gnumber) > 10)
 	{
 		cout << "你输入的编号有误，请重新输入！" << endl;
 		cout << "请输入你想修改的货物编号: ";
-		cin >> Gnumber;
+		cin.getline(Gnumber,20);
 	}
 	while (ptemp)
 	{
@@ -242,17 +251,33 @@ void modify(DuLinkList &L)
 //添加数据
 void add_cin(WAREHOUSE &ptemp)
 {
-	cout << "请输入货物编号，货物名称，货物数量" << endl;
-	cin >> ptemp.number >> ptemp.name >> ptemp.counter;
+	/*cout << "请输入货物编号，货物名称，货物数量" << endl;
+	cin >> ptemp.number >> ptemp.name >> ptemp.counter;*/
+	
+	cout << "请输入新的货物编号:"<<endl;
+	cin.getline(ptemp.number,20);
+	cout << "请输入新的货物名称:"<<endl;
+	cin.getline(ptemp.name,20);
+	cout << "请输入新的货物数量:"<<endl;
+	cin.getline(ptemp.counter,20);
+	
 	while (strlen(ptemp.number) > 10)
 	{
-		cout << "请输入货物编号，货物名称，货物数量" << endl;
-		cin >> ptemp.number >> ptemp.name >> ptemp.counter;
+		cout << "请输入新的货物编号:"<<endl;
+		cin.getline(ptemp.number,20);
+		cout << "请输入新的货物名称:"<<endl;
+		cin.getline(ptemp.name,20);
+		cout << "请输入新的货物数量:"<<endl;
+		cin.getline(ptemp.counter,20);
 	}
 	while (strlen(ptemp.name) > 10)
 	{
-		cout << "请输入货物编号，货物名称，货物数量" << endl;
-		cin >> ptemp.number >> ptemp.name >> ptemp.counter;
+		cout << "请输入新的货物编号:"<<endl;
+		cin.getline(ptemp.number,20);
+		cout << "请输入新的货物名称:"<<endl;
+		cin.getline(ptemp.name,20);
+		cout << "请输入新的货物数量:"<<endl;
+		cin.getline(ptemp.counter,20);
 	}
 }
 void add(DuLinkList &L)
@@ -300,13 +325,15 @@ void del(DuLinkList &L)
 
 	ptemp = L;
 	cout << "请问你需要根据什么来删除？（输入0是根据编号删除，输入1是根据名称删除）" << endl;
-	cout << "温馨提示：货物编号是唯一的，货物名称有可能重复哦！" << endl;
+	cout << "温馨提示：货物编号是唯一的，货物名称有可能重复哦!" << endl;
+	cout <<"请输入你的选择"; 
 	cin >> tag;
 
 	if (tag == 0)
 	{
 		cout << "请输入你想删除的货物编号：";
-		cin >> Gnumber;
+		getchar();
+		cin.getline(Gnumber,20);
 		for (i = 0; ptemp; i++)
 		{
 			if (strcmp(Gnumber, ptemp->data.number) == 0)
@@ -345,19 +372,19 @@ void del(DuLinkList &L)
 }
 
 //重新建立文件
-void empty(DuLinkList &L)
+void new_file(DuLinkList &L)
 {
-	FILE *fp;
-	if(fp=fopen("warehouse.dat","w+")==NULL)
-	{
-		cout<<"清空文件失败!";
-		getchar();
-		exit(0);
-		fclose(fp); 
-	}
+		FILE *fp;
+		if((fp=fopen("warehouse.dat","w+"))==NULL)
+		{
+			cout<<"新建文件失败!";
+			getchar();
+			exit(0);
+			fclose(fp); 
+		}
 	else
 	{
-		cout<<"已清空文件"<<endl;
+		cout<<"新建文件成功!"<<endl;
 	}
 }
 
@@ -385,7 +412,7 @@ void menu()
 	printf("\t\t\t************* 仓库管理系统 ******************************\n");
 	printf("\t\t\t*            1-----查询仓库信息                     *****\n");
 	printf("\t\t\t*            2-----修改仓库信息                   *******\n");
-	printf("\t\t\t*            3-----添加职工信息                  ********\n");
+	printf("\t\t\t*            3-----添加仓库信息                  ********\n");
 	printf("\t\t\t*            4-----删除仓库信息             *********\n");
 	printf("\t\t\t*            5-----保存仓库信息               ***********\n");
 	printf("\t\t\t*            6-----新建整个仓库          ************\n");
@@ -403,7 +430,7 @@ int main()
 	DuLinkList L;
 	
 	menu();
-	InitList(L);
+	InitLinkList(L);
 	read(L);
 	cin>>sele;
 	while(sele<1||sele>7)
@@ -422,9 +449,46 @@ int main()
 					{
 						key=0;
 						find(L);
-						cout
-					}
+						cout<<"是否继续查找？输入1继续，0停止:";
+                        cin>>key;                                                                cin>>key;
+					}while(key);
 				}
+            case 2:
+            	{
+            		cout<<"--------------------------------正在修改--------------------------------------"<<endl;
+					do
+					{
+						key=0;
+						modify(L);
+						cout<<"是否继续修改？输入1继续，0停止:";
+                        cin>>key;                                                                cin>>key;
+					}while(key);
+            	}
+            case 3:
+            	{
+            		cout<<"--------------------------------正在添加--------------------------------------"<<endl;
+					do
+					{
+						key=0;
+						find(L);
+						cout<<"是否继续添加？输入1继续，0停止:";
+                        cin>>key;                                                                cin>>key;
+					}while(key);
+            	}
+            case 4:
+            	{
+            		cout<<"--------------------------------正在删除--------------------------------------"<<endl;
+					do
+					{
+						key=0;
+						find(L);
+						cout<<"是否继续删除？输入1继续，0停止:";
+                        cin>>key;                                                                cin>>key;
+					}while(key);
+            	}
+            case 5:del(L);break; 
+            case 6: new_file(L);break;
+            case 7: exit(0);break;	        
 		}
 	}
 } 
