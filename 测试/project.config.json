@@ -1,0 +1,206 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enableEngineNative": false,
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.0.8",
+  "appid": "wx8cb5062400bcaaae",
+  "projectname": "%E5%88%9D%E9%9F%B3%E5%91%A8%E8%BE%B9",
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/categories/categories",
+          "pathName": "pages/categories/categories",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/cloth/cloth",
+          "pathName": "pages/channel/cloth/cloth",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/headset/headset",
+          "pathName": "pages/channel/headset/headset",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/coat/coat",
+          "pathName": "pages/channel/coat/coat",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/coat/coat",
+          "pathName": "pages/channel/coat/coat",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/pendant/pendant",
+          "pathName": "pages/channel/pendant/pendant",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/pendant/pendant",
+          "pathName": "pages/channel/pendant/pendant",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/hand/hand",
+          "pathName": "pages/channel/hand/hand",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/goods/show",
+          "pathName": "pages/goods/show",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/goods/show",
+          "pathName": "pages/goods/show",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/cloth/cloth",
+          "pathName": "pages/channel/cloth/cloth",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/cloth/cloth",
+          "pathName": "pages/channel/cloth/cloth",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/discovery/discovery",
+          "pathName": "pages/discovery/discovery",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/headset/headset",
+          "pathName": "pages/channel/headset/headset",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/coat/coat",
+          "pathName": "pages/channel/coat/coat",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/coat/coat",
+          "pathName": "pages/channel/coat/coat",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/pendant/pendant",
+          "pathName": "pages/channel/pendant/pendant",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/channel/hand/hand",
+          "pathName": "pages/channel/hand/hand",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/mine/mine",
+          "pathName": "pages/mine/mine",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/zuowen/zuowen",
+          "pathName": "pages/zuowen/zuowen",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/zuowen/zuowen",
+          "pathName": "pages/zuowen/zuowen",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

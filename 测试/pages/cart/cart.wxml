@@ -1,0 +1,8 @@
+<!--pages/cart/cart.wxml-->
+    <view class="empty-cart">
+        <view class="cart-icon">
+            <image src="../../assets/icons/cart_empty.png" mode="aspectFill" />
+        </view>
+        <view class="prompt">购物车开发中...</view>
+        <button type="warn" class="btn-warn" style="background: #A4DEF1;" bindtap="goIndex">初音小店逛逛~~</button>
+    </view>

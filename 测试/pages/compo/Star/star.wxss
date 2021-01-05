@@ -1,0 +1,12 @@
+.starGroup image{
+  width: 15rpx;
+  height: 15rpx;
+}
+
+.Star{
+  font-size: 5px;
+  margin-left: 10rpx;
+  margin-bottom:10rpx ;
+  /* margin-top:100rpx; */
+  color: #FFBC23;
+}

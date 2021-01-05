@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/zuowen/zuowen",
+    "pages/logs/logs",
+    "pages/categories/categories",
+    "pages/discovery/discovery",
+    "pages/search/search",
+    "pages/cart/cart",
+    "pages/mine/mine",
+    "pages/channel/cloth/cloth",
+    "pages/channel/headset/headset",
+    "pages/channel/coat/coat",
+    "pages/goods/show",
+    "pages/selectGoods/selectGoods",
+    "pages/addr/addr",
+    "pages/channel/hand/hand",
+    "pages/channel/pendant/pendant"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#A4DEF1",
+    "navigationBarTitleText": "初音小店",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#ff6700",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath": "assets/icons/home.png",
+        "selectedIconPath": "assets/icons/home_active.png"
+      },
+      {
+        "text": "分类",
+        "pagePath": "pages/categories/categories",
+        "iconPath": "assets/icons/category.png",
+        "selectedIconPath": "assets/icons/category_active.png"
+      },
+      {
+        "text": "发现",
+        "pagePath": "pages/discovery/discovery",
+        "iconPath": "assets/icons/discovery.png",
+        "selectedIconPath": "assets/icons/discovery_active.png"
+      },
+      {
+        "text": "购物车",
+        "pagePath": "pages/cart/cart",
+        "iconPath": "assets/icons/cart.png",
+        "selectedIconPath": "assets/icons/cart_active.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/mine/mine",
+        "iconPath": "assets/icons/mine.png",
+        "selectedIconPath": "assets/icons/mine_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

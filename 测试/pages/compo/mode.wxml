@@ -1,0 +1,14 @@
+<!--pages/component/mode/mode/mode.wxml-->
+<!-- <navigator class="More" url="/pages/MorePage/MorePage">更多</navigator> -->
+<scroll-view class="modeTop" scroll-x="{{true}}">
+  <view
+    wx:for="{{modeList}}"
+    wx:key="count"
+    class="scrollItem"
+  >
+
+    <image src="{{item.cover.url}}" wx:key="shape" class="Image"></image>
+    <view class="">{{item.title}}</view>
+    <star rate = "{{item.rating.value}}"></star>
+  </view>
+</scroll-view>

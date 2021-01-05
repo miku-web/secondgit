@@ -1,0 +1,6 @@
+<view class="starGroup">
+  <image wx:for="{{light}}" wx:key="image" src="/assets/image/rate_light.png"></image>
+  <image wx:for="{{half}}" wx:key="image" src="/assets/image/rate_half.png"></image>
+  <image wx:for="{{gray}}" wx:key="image" src="/assets/image/rate_gray.png"></image>
+  <text class="Star">{{rate}}</text>
+</view>
