@@ -1,0 +1,595 @@
+	*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 微软雅黑;
+    text-align: center;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.MyTitle{
+}
+
+.MyTitle-center{
+    font-size: 25px;
+    position: absolute;
+    top: 17px;
+}
+
+.MyTitle-right-one{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /*	background: #807374;*/
+    border: 1px solid #CCCCCC;
+    position: absolute;
+    right: 56px;
+    top: 16px;
+    font-size: 22px;
+    color: #666666;
+}
+
+.MyTitle-right-two{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    /*	background: #807374;*/
+    border: 1px solid #CCCCCC;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    font-size: 20px;
+    color: #666666;
+}
+
+.Head{
+    border-top: 1px #F3F3F3 solid;
+    /*	border-bottom: 1px #D4D4D4 solid;*/
+    width: 414px;
+    ;
+    height: 200px;
+    /*    background:;*/
+    position: absolute;
+    top: 54px;/*	这是上面部分的的颜色*/
+}
+
+.Head-left img{
+    width: 86px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+}
+
+.Head-left-top{
+    font-size: 17px;
+    color: #000000;
+    position: absolute;
+    top: 18px;
+    left: 96px;
+}
+
+.Head-left-label{
+    font-size: 10px;
+    color: #626262;
+    position: absolute;
+    top: 71px;
+    left: 100px;
+}
+
+.LV4{
+    position: absolute;
+    top: 20px;
+    left: 197px;
+}
+
+.Head-right{
+    font-size: 16px;
+    color: #ACACAC;
+    position: absolute;
+    top: 19px;
+    right: 43px;
+}
+
+.Head-center{
+    border-top: 1px #F3F3F3 solid;
+    border-bottom: 1px #F3F3F3 solid;
+    width: 414px;
+    height: 68px;
+    position: absolute;
+    top: 96px;
+    font-size: 15px;
+    left: -1px;
+}
+
+.Head-center-first{
+    border-right: 1px #F3F3F3 solid;
+    opacity: 0.8;
+    width: 100px;
+    height: 55px;
+    position: relative;
+    top: 7px;
+    left: 14px;
+}
+
+.Font-head-first{
+    font-size: 15px;
+    position: absolute;
+    top: 3px;
+    left: 32px;
+}
+
+.Font-first{
+    font-size: 13px;
+    color: #BABABA;
+    position: absolute;
+    top: 25px;
+    left: 27px;
+}
+
+.Font-first-three{
+    font-size: 13px;
+    color: #BABABA;
+    position: absolute;
+    top: 24px;
+    left: 29px;
+}
+
+.Head-center-two{
+    width: 100px;
+    height: 55px;
+    position: absolute;
+    left: 100px;
+    bottom: 5px;
+    border-right: 1px #F3F3F3 solid;
+    opacity: 0.8;
+}
+
+.Font-first-two{
+    font-size: 13px;
+    color: #BABABA;
+    position: absolute;
+    top: 25px;
+    left: 31px;
+}
+
+.Head-center-three{
+    width: 100px;
+    height: 55px;
+    position: absolute;
+    left: 186px;
+    bottom: 3px;
+    border-right: 1px #F3F3F3 solid;
+    opacity: 0.8;
+}
+
+.Font-head-three{
+    position: absolute;
+    left: 50px;
+}
+
+.Head-center-four{
+    width: 72px;
+    height: 55px;
+    position: absolute;
+    left: 315px;
+    bottom: 1px;
+    top: auto;
+    opacity: 0.8;
+}
+
+.Font-head-four{
+    position: absolute;
+    left: 4px;
+    bottom: 37px;
+}
+
+.Font-first-last{
+    width: 64px;
+    font-size: 13px;
+    color: #BABABA;
+    position: absolute;
+    top: 22px;
+    left: -20px;
+}
+
+.Signin{
+    width: 189px;
+    /*    background: ;*/
+    height: 35px;
+    border-radius: 100px;
+    position: absolute;
+    left: 101px;
+    background-color: #DCD9D4;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0.50) 0%, rgba(0,0,0,0.50) 100%), radial-gradient(at 50% 0%, rgba(255,255,255,0.10) 0%, rgba(0,0,0,0.50) 50%);
+    background-blend-mode: soft-light,screen;
+    bottom: -47px;
+}
+
+.Singin-font{
+    font-size: 15px;
+    color: #010101;
+    font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+    position: absolute;
+    top: 7px;
+    left: 83px;
+}
+
+.clear{
+    width: 414px;
+    height: 18px;
+    background: #F3F3F3;
+    position: absolute;
+    top: 223px;
+}
+
+.Center-first{
+    width: 414px;
+    height: 55px;
+    border-bottom: 1px #F3F3F3 solid;
+    /*    background: #CC6365;*/
+    position: absolute;
+    top: 237px;
+}
+
+.Center-first-font{
+    font-size: 13px;
+    color: #BABABA;
+    position: absolute;
+    right: 340px;
+    left: auto;
+    top: 26px;
+}
+
+.Center-two-font{
+    font-size: 14px;
+    color: #BABABA;
+    position: absolute;
+    top: 25px;
+    right: 182px;
+    letter-spacing: 2px;
+}
+
+/*称号*/
+.Center-two{
+    width: 414px;
+    height: 55px;
+    border-bottom: 1px #F3F3F3 solid;
+    /*    background: #CC6365;*/
+    position: absolute;
+    top: 294px;
+}
+.Center-first-font-two{
+    font-size: 13px;
+    color: #BABABA;
+    position: absolute;
+    right: 340px;
+    left: auto;
+    top: 26px;
+}
+
+.Center-two-font-two{
+	font-size: 14px;
+    color: #BABABA;
+    position: absolute;
+    top: 25px;
+    right: 182px;
+    letter-spacing: 2px;
+}
+
+.more{
+    font-size: 35px;
+    color: #666666;
+    position: absolute;
+    bottom: 6px;
+    left: 344px;
+    top: auto;
+}
+
+.VIP{
+    width: 414px;
+    height: 46px;
+    /*    border-bottom: 1px #C0B1B1 solid;*/
+    /*    background: #A8A8A8;*/
+	
+    position: absolute;
+    top: 351px;
+}
+
+.Open-vip{
+    width: 189px;
+    height: 35px;
+    background: #E85A28;
+    border-radius: 100px;
+    position: absolute;
+    top: 4px;
+    left: 100px;
+}
+
+.VIP-Font{
+    font-size: 15px;
+    color: #FFF4E7;
+    letter-spacing: 1px;
+    position: relative;
+    top: 6px;
+}
+
+.clear2{
+    width: 414px;
+    height: 18px;
+    background: #F3F3F3;
+    position: absolute;
+    top: 449px;
+}
+
+.Bottom-First{
+    width: 414px;
+    height: 55px;
+    /*    background: #4BAFBE;*/
+    border-bottom: 1px #F3F3F3 solid;
+    position: absolute;
+    top: 458px;/*    border-bottom: 1px #BABABA solid;*/
+}
+
+/*我的收藏*/
+.Bottom-first img{
+    width: 25px;
+    position: absolute;
+    top: 18px;
+    right: 376px;
+}
+
+.Bottom-first-Font{
+    font-size: 18px;
+    font-family: "微软雅黑";
+    position: absolute;
+    right: 279px;
+    top: 17px;
+}
+
+.bottom-more{
+    font-size: 20px;
+    color: #D1D1D1;
+    position: absolute;
+    top: 15px;
+    left: 359px;
+}
+/*我的收藏结束*/
+
+/*我的上传*/
+.Bottom-second{
+    width: 414px;
+    ;
+    height: 55px;
+    /*    background: #4BAFBE;*/
+    border-bottom: 1px #F3F3F3 solid;
+    position: absolute;
+    top: 509px;
+}
+
+/*我的下载*/
+.Bottom-third{
+    width: 414px;
+    height: 55px;
+    /*    background: #4BAFBE;*/
+    border-bottom: 1px #F3F3F3 solid;
+    position: absolute;
+    top: 557px;
+}
+
+/*我的消息*/
+.Bottom-four{
+    width: 414px;
+    height: 55px;
+    /*    background: #4BAFBE;*/
+    border-bottom: 1px #F3F3F3 solid;
+    position: absolute;
+    top: 604px;
+}
+
+/*我的关注*/
+.Bottom-five{
+    width: 414px;
+    height: 55px;
+    /*    background: #4BAFBE;*/
+    border-bottom: 1px #F3F3F3 solid;
+    position: absolute;
+    top: 655px;
+}
+
+/*红点*/
+.RedPoint img{
+    width: 9px;
+    position: absolute;
+    top: 622px;
+    right: 255px;
+}
+/*我的上传*/
+.Bottom-first-two img{
+    width: 49px;
+    position: absolute;
+    top: 6px;
+    right: 361px;
+}
+
+
+
+.Bottom-first-Font-two{
+    font-size: 18px;
+    font-family: "微软雅黑";
+    position: absolute;
+    right: 278px;
+    top: 17px;
+}
+
+.Bottom-first-three img{
+    width: 43px;
+    position: absolute;
+    top: 7px;
+    right: 366px;
+}
+
+.Bottom-first-Font-three{
+    font-size: 18px;
+    font-family: "微软雅黑";
+    position: absolute;
+    right: 280px;
+    top: 14px;
+}
+
+/*我的消息*/
+.Bottom-first-four img{
+    width: 34px;
+    position: absolute;
+    top: 15px;
+    right: 372px;
+}
+
+.Bottom-first-Font-four{
+    font-size: 18px;
+    font-family: "微软雅黑";
+    position: absolute;
+    right: 281px;
+    top: 17px;
+}
+
+/*我的关注*/
+.Bottom-first-five img{
+    width: 40px;
+    position: absolute;
+    top: 8px;
+    right: 369px;
+}
+
+.Bottom-first-Font-five{
+    font-size: 18px;
+    font-family: "微软雅黑";
+    position: absolute;
+    right: 282px;
+    top: 17px;
+}
+
+.bottom-more-two{
+    font-size: 20px;
+    color: #D1D1D1;
+    position: absolute;
+    left: 362px;
+    top: 12px;
+}
+
+.bottom-more-three{
+    font-size: 20px;
+    color: #D1D1D1;
+    position: absolute;
+    left: 361px;
+    top: 16px;
+}
+
+.bottom-more-four{
+    font-size: 20px;
+    color: #D1D1D1;
+    position: absolute;
+    left: 361px;
+    top: 19px;
+}
+
+.bottom-more-five{
+    font-size: 20px;
+    color: #D1D1D1;
+    position: absolute;
+    left: 360px;
+    top: 16px;
+}
+
+.clear3{
+    width: 414px;
+    height: 36px;
+    background: white;
+    position: absolute;
+    top: 720px;
+}
+
+.navagation{
+    float: left;
+    width: 414px;
+    height: 46px;
+    background: #F7F7F7;
+    position: fixed;
+	bottom: 0;
+    z-index: 99999;
+}
+
+.nav1 img{
+    width: 25px;
+    position: relative;
+    top: 3px;
+    left: 163px;
+}
+
+.My{
+    font-size: 10px;
+    color: #A09D9A;
+    position: relative;
+    top: 15px;
+    left: 134px;
+}
+
+/*视频壁纸*/
+.nav2 img{
+    width: 33px;
+    position: relative;
+    left: 102px;
+    bottom: 26px;
+}
+
+.VideoWallpaper{
+    font-size: 10px;
+    width: 43px;
+    color: #A09D9A;
+    position: relative;
+    bottom: 13px;
+    left: 59px;
+    right: auto;
+}
+
+/*头像*/
+.nav3 img{
+    width: 44px;
+    position: relative;
+    bottom: 61px;
+}
+
+/*模图*/
+.nav4 img{
+    width: 40px;
+    position: relative;
+    bottom: 103px;
+    right: 60px;
+}
+
+.nav4-font{
+    font-size: 10px;
+    color: #A09D9A;
+    position: relative;
+    bottom: 93px;
+    right: 98px;
+}
+
+/*首页*/
+.nav5 img{
+    width: 34px;
+    position: relative;
+    bottom: 138px;
+    right: 135px;
+}
+
+.nav5-font{
+    font-size: 10px;
+    color: #A09D9A;
+    position: relative;
+    bottom: 130px;
+    right: 168px;
+}

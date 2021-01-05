@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>Miku注册</title>
+<link rel="stylesheet" href="zc.css" type="text/css">
+	
+</head>
+<body>
+<div class="bg" >
+  
+    <form action="#" method="get" autocomplete="off">
+    <h2 class="Top">Miku注册</h2>
+    <p><span>Miku账号：</span><input type="text" name="user_name" placeholder=""   /></p>
+    <p><span><font color="purple">*</font>MIku密码：</span><input type="text" name="real_name"  pattern="^[\u4e00-\u9fa5]{0,}$" placeholder="" required autofocus/></p>
+    <p><span>*确认密码：</span><input type="number" name="real_lage" value="" min="10" max="120" required/></p>
+    <p><span>*出生日期：</span><input type="date" name="birthday" value="1990/10/01" required/></p>
+    <p><span>*电子邮箱：</span><input type="email" name="myemail" placeholder="@163.com" required multiple/></p>
+    <p><span>*身份证号：</span><input type="text" name="card" required pattern="^\d{8,18}|[0-9x]{8,18}|[0-9X]{8,18}?$"/></p>
+    <p><span>*手机号码：</span><input type="tel" name="telphone" pattern="^\d{11}$" required/></p>
+	<p><span>*验证手机：</span><input class="Mob" type="tel" name="telphone" pattern="^\d{6}$" required/><button class="MobBtn">获取验证码</button></p>
+    <p><span>所属院系：</span><input type="text" name="mydept" list="deptlist" placeholder="人工智能学院" />
+      <datalist id="deptlist">
+      <option>人工智能学院</option>
+      <option>电子信息学院</option>
+      <option>文学院</option>
+	  <option>外国语学院</option>
+      <option>理学院</option>
+      <option>体健学院</option>
+	  <option>法学院</option>
+      <option>化学化工学院</option>
+      <option>管理学院</option>
+	  <option>东盟学院</option>
+      <option>继续教育学院</option>
+      <option>马克思主义学院</option>
+	  <option>民社学院</option>
+      <option>海洋与生物技术学院</option>
+      <option>艺术学院</option>
+      <option>国际教育学院</option>
+      <option>经济学院</option>
+      <option>传媒学院</option>
+      <option>人民武装学院</option>
+      <option>创新创业院</option>
+      <option>中英学院</option>
+      <option>预科教育学院</option>
+      <option>国学院</option>
+      </datalist>
+    </p>
+    <p class="lucky"><span>幸运颜色：</span><input type="color" name="lovecolor" value="#0000FE"/>（选择喜欢的颜色）</p>
+    <p class="btn">
+    <input type="submit" value="提交"/>
+    <input type="reset" value="重置"/>
+    </p>
+    </form>
+  </div>
+</div>
+</body>
+</html>

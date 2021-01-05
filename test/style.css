@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 微软雅黑;
+    font-family: 微软雅黑;
+    text-align: center; 
+    width: 100%;
+    height: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+canvas{
+	padding: 0;
+    margin: 0;
+}
+
+div.btnbg {
+	 position:fixed;
+	 left:0;
+	 top:0;
+}
+
+.Logo{
+    width: 414px;
+    height: 105px;
+    /*    background-color: aqua;*/
+    z-index: 1;
+    position: absolute;
+    top: 19px;
+}
+
+.Logo-left{
+    position: absolute;
+    left: 27px;
+	opacity: 1
+		
+}
+
+.Logo-right{
+    float: left;
+    position: absolute;
+    left: 124px;
+    top: -91px;
+    opacity: 1;
+}
+
+.Container{
+    /*    background-color: aqua;*/
+    width: 265px;
+    height: 352px;
+    position: absolute;
+    top: 114px;
+    left: 84px;
+}
+
+.Container-input{
+    /*	border-radius: 100px;*/
+    width: 265px;
+    height: 81px;
+    position: absolute;
+    top: 39px;
+    /* [disabled]left: 0%; */
+    opacity: 0.8;
+}
+input{
+	border:#8283AD;
+	background: #FFE9DC;
+	text-align: center;
+}
+
+.Container-input-two{
+    width: 264px;
+    height: 81px;
+    position: absolute;
+    top: 119px;
+    opacity: 0.8;
+}
+
+.Container-Forget{
+    /*    color: #EAD4C9;*/
+    position: absolute;
+    left: 9px;
+    font-size: 12px;
+    top: 193px;
+}
+
+.Container-SignUp{
+    color: #EAD4C9;
+    font-size: 12px;
+    position: absolute;
+    top: 193px;
+    left: 205px;
+}
+
+.Container-Login{
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 0;
+    position: absolute;
+    top: 241px;
+    left: 77px;
+    display: block;
+}
+
+.Container-Login_content{
+    position: absolute;
+    text-align: center;
+    top: 279px;
+    width: auto;
+    left: 111px;
+    color: #83A1EB;
+}
+
+.Container-Login_content a{
+	text-decoration: none;
+	font-feature-settings: "微软雅黑";
+	cursor: pointer;
+}
+
+.Container-Other{
+    position: absolute;
+    opacity: 0.8;
+    font-family: Cambria, "Hoefler Text", "Liberation Serif", Times, "Times New Roman", "serif";
+    font-style: italic;
+    font-size: 20px;
+    top: 532px;
+    z-index: 1;
+    left: 202px;
+}
+
+.Other{
+    margin: 0 auto;
+    width: 294px;
+    height: 15px;
+    position: absolute;
+    top: 576px;
+    left: 65px;
+    border-top: 1px solid #ABA1A8;
+}
+
+.Other-one img{
+    width: 36px;
+    position: absolute;
+    top: 8px;
+    opacity: 1;
+    left: 6px;
+}
+
+.Other-two img{
+    width: 61px;
+    position: absolute;
+    top: 2px;
+    opacity: 1;
+    left: 110px;
+}
+
+.Other-three img{
+    width: 78px;
+    position: absolute;
+    opacity: 1;
+    left: 203px;
+    top: -8px;
+}
+
+.user-agreement{
+    position: absolute;
+    top: 656px;
+    font-size: 10px;
+    left: 155px;
+}
+
+.user-agreement a{
+    text-decoration: none;
+    cursor: pointer;
+    color: #7EBAF8;
+    left: 17px;
+}
